@@ -5,23 +5,19 @@ import pickle # to load the model
 import streamlit as st
 import pandas as pd
 import requests
-
+import os
 
 
 # LOADING THE MODEL FROM  GITHUB
-url = "https://github.com/ClintonJuma/Machine-Learning-model/blob/main/heartdisease_model.sav"
+url = "https://raw.githubusercontent.com/ClintonJuma/Machine-Learning-model/main/heartdisease_model.sav"
 
-# Download the file
-loaded_model = urllib.request.urlretrieve(url, "heartdisease_model.sav")
+# Download the model file
+response = requests.get(url)
 
-# Save the downloaded content to a temporary file
-with open("heartdisease_model.sav","wb") as f:
-    pickle.dump(loaded_model, f)
-
-
-# Load the saved model
-with open("heartdisease_model.sav","rb") as f:
-    loaded_model = pickle.load(f)
+# Save the model file properly
+model_filename = "heartdisease_model.sav"
+with open(model_filename, "wb") as f:
+    f.write(response.content)  # Save binary content correctly
 
 
 # Now, you can use the loaded model for predictions
