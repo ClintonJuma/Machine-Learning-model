@@ -9,7 +9,7 @@ import requests
 
 
 # LOADING THE MODEL FROM  GITHUB
-url = "https://github.com/ClintonJuma/Machine-Learning-model/blob/main/heartdisease_model.sav"
+url = "https://raw.githubusercontent.com/ClintonJuma/Machine-Learning-model/main/heartdisease_model.sav"
 
 # Download the file
 loaded_model = requests.get(url)
@@ -20,7 +20,7 @@ with open("heartdisease_model.sav","wb") as f:
 
 
 # Load the saved model
-with open("heartdisease_model.sav","wb") as f:
+with open("heartdisease_model.sav","rb") as f:
     loaded_model = pickle.load(f)
 
 
