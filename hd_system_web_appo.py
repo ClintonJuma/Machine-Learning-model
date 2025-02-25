@@ -16,9 +16,13 @@ loaded_model = requests.get(url)
 
 # Save the downloaded content to a temporary file
 with open("heartdisease_model.sav","wb") as f:
-    pickle.dump(loaded_model,f)
-with open("heartdisease_model.sav","rb") as f:
-    loaded_model  = pickle.load(f)
+    pickle.dump(loaded_model, f)
+
+
+# Load the saved model
+with open("heartdisease_model.sav","wb") as f:
+    loaded_model = pickle.load(f)
+
 
 # Now, you can use the loaded model for predictions
 # creating a function for prediction
