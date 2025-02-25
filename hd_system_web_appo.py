@@ -12,7 +12,7 @@ import requests
 url = "https://github.com/ClintonJuma/Machine-Learning-model/blob/main/heartdisease_model.sav"
 
 # Download the file
-loaded_model = requests.get(url)
+loaded_model = urllib.request.urlretrieve(url, "heartdisease_model.sav")
 
 # Save the downloaded content to a temporary file
 with open("heartdisease_model.sav","wb") as f:
