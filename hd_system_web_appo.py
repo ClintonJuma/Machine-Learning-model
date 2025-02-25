@@ -20,7 +20,7 @@ with open("heartdisease_model.sav","wb") as f:
 
 
 # Load the saved model
-with open("heartdisease_model.sav","wb") as f:
+with open("heartdisease_model.sav","rb") as f:
     loaded_model = pickle.load(f)
 
 
