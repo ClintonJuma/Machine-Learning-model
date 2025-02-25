@@ -16,8 +16,7 @@ loaded_model = requests.get(url)
 
 # Save the downloaded content to a temporary file
 with open("heartdisease_model.sav","wb") as f:
-    pickle.dump((loaded_model,f)
-)
+    pickle.dump(loaded_model,f)
 with open("heartdisease_model.sav","rb") as f:
     loaded_model  = pickle.load(f)
 
