@@ -9,7 +9,7 @@ import requests
 
 
 # LOADING THE MODEL FROM  GITHUB
-url = 'https://github.com/ClintonJuma/Machine-Learning-model/blob/main/heartdisease_model.sav'
+url = 'https://raw.githubusercontent.com/ClintonJuma/Machine-Learning-model/refs/heads/main/hd_web.py'
 
 # Download the file
 loaded_model = requests.get(url)
